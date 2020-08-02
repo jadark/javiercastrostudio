@@ -2,7 +2,7 @@
   <div class="box_head">
     <h1>List Post</h1>
     <ul>
-      <!-- <li v-for="post of posts" v-bind:key="post.id">{{post.title}}</li> -->
+      <li v-for="post of posts" v-bind:key="post.id">{{post.title}}</li>
     </ul>
   </div>
 </template>
