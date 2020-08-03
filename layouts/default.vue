@@ -67,7 +67,7 @@
       background-color: #0abcf9;
       background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%);
     }
-    &.aftermoon{
+    &.afternoon{
       background-color: #182b3a;
       background-image: linear-gradient(315deg, #182b3a 0%, #20a4f3 74%);
     }
@@ -77,6 +77,7 @@
     }
     .container{
       max-width: 1200px;
+      padding: 0 1rem;
     }
   }
 </style>
