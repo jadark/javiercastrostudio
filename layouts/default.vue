@@ -33,6 +33,7 @@
 </script>
 
 <style lang="scss">
+  @import 'normalize.css/normalize.css';
   body {
     font-family:
       'Source Sans Pro',

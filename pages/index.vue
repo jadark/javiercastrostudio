@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   section.home{
     display: flex;
     min-height: calc(100vh - 68px);
