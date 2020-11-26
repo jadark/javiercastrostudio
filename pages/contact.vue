@@ -19,6 +19,11 @@
               <div class="error" v-if="!$v.email.required">Email is required</div>
               <div class="error" v-if="!$v.email.email">no es un correo</div>
             </div>
+            <div class="form-group" :class="{ 'form-group--error': $v.message.$error }">
+              <label class="form__label">Mnsaje</label>
+              <textarea type="text" class="form__input" v-model="$v.message.$model"></textarea>
+              <div class="error" v-if="!$v.message.required">Email is required</div>
+            </div>
             <button class="button" type="submit" :disabled="submitStatus === 'PENDING'">Submit!</button>
             <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for your submission!</p>
             <p class="typo__p" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
@@ -40,6 +45,7 @@ export default {
       name: "",
       age: 0,
       email: "",
+      message:"",
       submitStatus: null
     }
   },
@@ -51,6 +57,9 @@ export default {
     email: {
       required,
       email
+    },
+    message: {
+      required
     }
   },
   methods:{
@@ -67,18 +76,18 @@ export default {
         }, 500)
       }
       // Saving DataBase Firebase
-      // this.$fireStore.collection("contact").add({
-      //     name: this.name,
-      //     email: this.email,
-      //     message: this.message,
-      //     date: new Date()
-      // })
-      // .then(function(res) {
-      //     console.log("Document successfully written!");
-      // })
-      // .catch(function(error) {
-      //     console.error("Error writing document: ", error);
-      // })
+      this.$fireStore.collection("contact").add({
+          name: this.name,
+          email: this.email,
+          message: this.message,
+          date: new Date()
+      })
+      .then(function(res) {
+          console.log("Document successfully written!");
+      })
+      .catch(function(error) {
+          console.error("Error writing document: ", error);
+      })
     }
   }
 }

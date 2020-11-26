@@ -1,3 +1,4 @@
+require('dotenv').config()
 
 export default {
   /*
@@ -57,17 +58,18 @@ export default {
  modules: [
    '@nuxtjs/axios',
    '@nuxtjs/firebase',
+   '@nuxtjs/dotenv'
   ],
   firebase: {
     config: {
-      apiKey: 'AIzaSyDc2329q2OrTOng6a5M_J1DzuNZNYQFLLk',
-      authDomain: 'javierstudio-6ee10.firebaseapp.com',
-      databaseURL: 'https://javierstudio-6ee10.firebaseio.com',
-      projectId: 'javierstudio-6ee10',
-      storageBucket: 'javierstudio-6ee10.appspot.com',
-      messagingSenderId: '788225458451',
-      appId: '1:788225458451:web:ed50285b84e31f29ecdae6',
-      measurementId: 'G-VFDB1QL89P'
+      apiKey: process.env.firebaseApiKey,
+      authDomain: process.env.firebaseAuthDomain,
+      databaseURL: process.env.firebaseDatabaseURL,
+      projectId: process.env.firebaseProjectId,
+      storageBucket: process.env.firebaseStorageBucket,
+      messagingSenderId: process.env.firebaseMessagingSenderId,
+      appId: process.env.firebaseAppId,
+      measurementId: process.env.firebaseMeasurementId
     },
     services: {
       firestore: true
